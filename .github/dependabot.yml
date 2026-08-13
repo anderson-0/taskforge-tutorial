@@ -8,6 +8,11 @@ updates:
     directory: /nextjs
     schedule:
       interval: weekly
+    groups:
+      prisma:
+        patterns:
+          - prisma
+          - "@prisma/*"
   - package-ecosystem: pip
     directory: /fastapi
     schedule:

@@ -2,7 +2,7 @@
 
 ## Prerequisites
 
-- Node.js 22
+- Node.js 22.12–22.x or 24+
 - npm
 
 From the repository root:
@@ -26,8 +26,8 @@ Open <http://localhost:3000> and sign in with `alice@example.com` and
 
 The script checks the Node version, installs exactly the locked dependencies,
 applies the committed database migrations, loads deterministic sample data,
-and runs lint, type checking, coverage, the production build, and the
-production dependency audit.
+and runs lint, type checking, coverage, the legacy SQLite compatibility check,
+the production build, and the production dependency audit.
 
 The seed command upserts only the stable sample records. It does not delete
 users, projects, or tasks you created during an exercise. Use `npm run
@@ -40,8 +40,8 @@ npm run db:reset
 ```
 
 Prisma asks for no confirmation because this command is explicitly for the
-ignored local development database. It reapplies migrations and runs the
-configured seed command.
+ignored local development database. The script reapplies migrations and then
+runs the configured seed command explicitly, as required by Prisma 7.
 
 ## Useful commands
 

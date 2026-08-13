@@ -1,7 +1,8 @@
-import { PrismaClient, type Prisma } from "@prisma/client";
-import { hash } from "bcryptjs";
+import type { Prisma } from "../generated/prisma/client";
+import bcrypt from "bcryptjs";
 import pino from "pino";
 import { pathToFileURL } from "node:url";
+import { prisma } from "../lib/db";
 
 type UserKey = "alice" | "bob" | "charlie";
 
@@ -41,7 +42,6 @@ export type SeedRunnerDependencies = SeedDependencies & {
   disconnect: () => Promise<void>;
 };
 
-const prisma = new PrismaClient();
 const logger = pino({ level: "info" });
 
 const projectIds = {
@@ -343,7 +343,7 @@ export function startSeedIfDirect(
 
 export const runtimeSeedDependencies: SeedRunnerDependencies = {
   transaction: async (operation) => prisma.$transaction(operation),
-  hashPassword: hash,
+  hashPassword: bcrypt.hash,
   logger,
   disconnect: async () => prisma.$disconnect(),
 };

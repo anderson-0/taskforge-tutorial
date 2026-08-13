@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import type { Project, Task, User } from "@prisma/client";
+import type { Project, Task, User } from "@/generated/prisma/client";
 import { Plus } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ProjectList } from "@/components/project-list";

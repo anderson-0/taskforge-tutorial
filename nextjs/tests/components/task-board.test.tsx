@@ -1,5 +1,5 @@
 import { render, screen, within } from "@testing-library/react";
-import type { Task, User } from "@prisma/client";
+import type { Task, User } from "@/generated/prisma/client";
 import { TaskBoard } from "@/components/task-board";
 
 type TaskWithAssignee = Task & {

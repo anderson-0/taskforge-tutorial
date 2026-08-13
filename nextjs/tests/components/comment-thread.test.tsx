@@ -1,6 +1,6 @@
 import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import type { Comment, User } from "@prisma/client";
+import type { Comment, User } from "@/generated/prisma/client";
 
 const mockLoggerError = jest.fn<void, [unknown, string]>();
 

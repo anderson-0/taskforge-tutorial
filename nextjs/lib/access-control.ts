@@ -1,4 +1,4 @@
-import type { Prisma } from "@prisma/client";
+import type { Prisma } from "@/generated/prisma/client";
 
 export function canMutate(role: string | undefined): boolean {
   return role === "ADMIN" || role === "MEMBER";

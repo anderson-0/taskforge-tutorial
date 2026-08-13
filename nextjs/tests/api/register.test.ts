@@ -28,7 +28,10 @@ jest.mock("@/lib/db", () => ({
 }));
 
 jest.mock("bcryptjs", () => ({
-  hash: (password: string, rounds: number) => mockHash(password, rounds),
+  __esModule: true,
+  default: {
+    hash: (password: string, rounds: number) => mockHash(password, rounds),
+  },
 }));
 
 import { POST } from "@/app/api/auth/register/route";

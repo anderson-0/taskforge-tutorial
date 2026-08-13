@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import type { Comment, User } from "@prisma/client";
+import type { Comment, User } from "@/generated/prisma/client";
 import { MessageCircle } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";

@@ -1,7 +1,7 @@
 # TaskForge — Next.js track
 
 A project management teaching application built with Next.js 16, React 19,
-TypeScript, Prisma, and Tailwind CSS.
+TypeScript, Prisma 7, and Tailwind CSS.
 
 ## Features
 
@@ -19,7 +19,7 @@ TypeScript, Prisma, and Tailwind CSS.
 
 - **Framework**: Next.js 16 (App Router) with React 19
 - **Language**: TypeScript (strict mode)
-- **Database**: SQLite with Prisma ORM
+- **Database**: SQLite with Prisma ORM 7 and its better-sqlite3 adapter
 - **Authentication**: NextAuth.js
 - **UI**: Tailwind CSS + shadcn/ui components
 - **Testing**: Jest + React Testing Library
@@ -28,7 +28,7 @@ TypeScript, Prisma, and Tailwind CSS.
 
 ### Prerequisites
 
-- Node.js 22+ and npm
+- Node.js 22.12–22.x or 24+, and npm
 
 ### Installation
 
@@ -53,7 +53,7 @@ npm ci
 Edit `.env` and update the following:
 
 ```env
-DATABASE_URL="file:./dev.db"
+DATABASE_URL="file:./prisma/dev.db"
 NEXTAUTH_URL="http://localhost:3000"
 NEXTAUTH_SECRET="your-secret-key-change-this-in-production"
 ```
@@ -108,6 +108,7 @@ nextjs/
 │   └── comment-thread.tsx
 ├── lib/                     # Utilities and configurations
 │   ├── db.ts                # Prisma client
+│   ├── database-url.ts      # SQLite path compatibility
 │   ├── auth.ts              # NextAuth config
 │   ├── types.ts             # TypeScript types
 │   └── utils.ts             # Utility functions
@@ -115,6 +116,8 @@ nextjs/
 │   ├── migrations/
 │   ├── schema.prisma
 │   └── seed.ts
+├── generated/prisma/        # Generated locally during install
+├── prisma.config.ts         # Prisma datasource and seed config
 └── tests/                   # Test files
 ```
 
@@ -141,7 +144,8 @@ nextjs/
 - `npm run db:reset` - Recreate and reseed the local database
 - `npm run db:setup` - Apply migrations and seed the database
 - `npm run test:coverage` - Run tests with a coverage report
-- `npm run verify` - Run lint, types, coverage, build, and production dependency audit
+- `npm run test:prisma-compatibility` - Exercise Prisma 5 SQLite timestamp compatibility
+- `npm run verify` - Run lint, types, coverage, Prisma compatibility, build, and production dependency audit
 - `npx prisma studio` - Open Prisma Studio (database GUI)
 
 ## Testing

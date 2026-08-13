@@ -1,4 +1,4 @@
-import type { User, Project, Task, Comment, Label } from "@prisma/client";
+import type { User, Project, Task, Comment, Label } from "@/generated/prisma/client";
 
 export type Role = "ADMIN" | "MEMBER" | "VIEWER";
 export type ProjectStatus = "ACTIVE" | "ARCHIVED";

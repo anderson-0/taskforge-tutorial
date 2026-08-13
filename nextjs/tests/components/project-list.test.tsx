@@ -1,5 +1,5 @@
 import { render, screen, within } from "@testing-library/react";
-import type { Project, Task, User } from "@prisma/client";
+import type { Project, Task, User } from "@/generated/prisma/client";
 import { ProjectList } from "@/components/project-list";
 
 type ProjectWithTasks = Project & {

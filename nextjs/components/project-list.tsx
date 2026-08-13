@@ -1,6 +1,6 @@
 "use client";
 
-import type { Project, Task, User } from "@prisma/client";
+import type { Project, Task, User } from "@/generated/prisma/client";
 import { Archive, Folder } from "lucide-react";
 import Link from "next/link";
 import {

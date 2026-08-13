@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { useParams } from "next/navigation";
-import type { Project, Task, User } from "@prisma/client";
+import type { Project, Task, User } from "@/generated/prisma/client";
 import { ArrowLeft, Plus } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";

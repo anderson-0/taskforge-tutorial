@@ -2,7 +2,10 @@ const mockCompare = jest.fn<Promise<boolean>, [string, string]>();
 const mockFindUnique = jest.fn<Promise<unknown>, [unknown]>();
 
 jest.mock("bcryptjs", () => ({
-  compare: (password: string, hash: string) => mockCompare(password, hash),
+  __esModule: true,
+  default: {
+    compare: (password: string, hash: string) => mockCompare(password, hash),
+  },
 }));
 
 jest.mock("@/lib/db", () => ({

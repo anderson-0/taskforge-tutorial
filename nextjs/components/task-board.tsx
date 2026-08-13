@@ -1,6 +1,6 @@
 "use client";
 
-import type { Task, User } from "@prisma/client";
+import type { Task, User } from "@/generated/prisma/client";
 import { TaskCard } from "./task-card";
 
 type TaskWithAssignee = Task & {

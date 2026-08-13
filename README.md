@@ -41,7 +41,7 @@ credentials, and endpoints.
 
 ## Next.js quick start
 
-Prerequisite: Node.js 22 or newer.
+Prerequisite: Node.js 24.x.
 
 ```bash
 cd nextjs

@@ -168,8 +168,8 @@ function createDependencies(store: SeedStore): SeedDependencies {
 const mockRuntimeStore = createStore();
 const mockDisconnect = jest.fn<Promise<void>, []>(async () => undefined);
 
-jest.mock("@prisma/client", () => ({
-  PrismaClient: function PrismaClient() {
+jest.mock("@/lib/db", () => ({
+  prisma: (() => {
     const transaction = createTransaction(mockRuntimeStore);
     return {
       $transaction: (
@@ -177,11 +177,12 @@ jest.mock("@prisma/client", () => ({
       ) => operation(transaction),
       $disconnect: mockDisconnect,
     };
-  },
+  })(),
 }));
 
 jest.mock("bcryptjs", () => ({
-  hash: async () => "runtime-hashed-password",
+  __esModule: true,
+  default: { hash: async () => "runtime-hashed-password" },
 }));
 
 jest.mock("pino", () => ({

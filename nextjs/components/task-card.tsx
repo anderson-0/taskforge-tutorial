@@ -1,7 +1,7 @@
 "use client";
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import type { Task, User } from "@prisma/client";
+import type { Task, User } from "@/generated/prisma/client";
 import { Calendar, User as UserIcon } from "lucide-react";
 import Link from "next/link";
 

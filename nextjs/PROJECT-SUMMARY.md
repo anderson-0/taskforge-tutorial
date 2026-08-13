@@ -7,7 +7,7 @@ It is a runnable teaching baseline rather than a production starter.
 
 - Next.js 16 App Router and React 19
 - TypeScript in strict mode
-- Prisma 5 with SQLite
+- Prisma 7 with SQLite and the better-sqlite3 driver adapter
 - NextAuth.js credentials authentication
 - Tailwind CSS and Radix UI primitives
 - Jest and React Testing Library

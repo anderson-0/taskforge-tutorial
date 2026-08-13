@@ -6,7 +6,7 @@ import {
 } from "../../scripts/check-node-version.js";
 
 describe("Node version check", () => {
-  it.each(["22.12.0", "22.99.0", "24.0.0", "25.1.0", "v24.2.0"])(
+  it.each(["24.0.0", "24.99.0", "v24.2.0"])(
     "accepts %s",
     (version) => {
       expect(isSupportedNodeVersion(version)).toBe(true);
@@ -14,12 +14,12 @@ describe("Node version check", () => {
     },
   );
 
-  it.each(["21.9.0", "22.11.0", "23.9.0", "invalid"])(
+  it.each(["22.99.0", "23.9.0", "25.0.0", "invalid"])(
     "rejects %s",
     (version) => {
       expect(isSupportedNodeVersion(version)).toBe(false);
       expect(() => assertSupportedNodeVersion(version)).toThrow(
-        "TaskForge requires Node.js 22.12-22.x or Node.js 24+.",
+        "TaskForge requires Node.js 24.x.",
       );
     },
   );

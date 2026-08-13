@@ -1,15 +1,13 @@
 import { pathToFileURL } from "node:url";
 
-const REQUIREMENT_MESSAGE =
-  "TaskForge requires Node.js 22.12-22.x or Node.js 24+.";
+const REQUIREMENT_MESSAGE = "TaskForge requires Node.js 24.x.";
 
 /** @param {string} version */
 export function isSupportedNodeVersion(version) {
-  const [majorText, minorText] = version.replace(/^v/, "").split(".");
+  const [majorText] = version.replace(/^v/, "").split(".");
   const major = Number(majorText);
-  const minor = Number(minorText);
 
-  return (major === 22 && minor >= 12) || major >= 24;
+  return major === 24;
 }
 
 /** @param {string} version */

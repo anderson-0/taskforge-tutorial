@@ -2,7 +2,7 @@
 
 ## Prerequisites
 
-- Node.js 22.12–22.x or 24+
+- Node.js 24.x
 - npm
 
 From the repository root:

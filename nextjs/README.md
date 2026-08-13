@@ -28,7 +28,7 @@ TypeScript, Prisma 7, and Tailwind CSS.
 
 ### Prerequisites
 
-- Node.js 22.12–22.x or 24+, and npm
+- Node.js 24.x and npm
 
 ### Installation
 

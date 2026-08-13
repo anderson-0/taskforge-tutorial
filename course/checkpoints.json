@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 1,
+  "checkpoints": [
+    {
+      "id": "course-v1/starter",
+      "gitRef": "course-v1/starter",
+      "description": "Reproducible baseline before Tutorial 2 exercises"
+    }
+  ]
+}

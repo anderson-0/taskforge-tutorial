@@ -1,0 +1,2 @@
+# Reproducible development environment generated from pyproject.toml and uv.lock.
+-r requirements.lock
